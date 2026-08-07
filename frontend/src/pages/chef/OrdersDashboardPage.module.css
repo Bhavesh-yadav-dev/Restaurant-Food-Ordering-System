@@ -1,0 +1,236 @@
+/* OrdersDashboardPage.module.css */
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.backLink {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.backLink:hover { background: #f0f0f0; }
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  flex: 1;
+}
+
+/* Poll indicator */
+.pollInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.countdown {
+  font-size: 0.82rem;
+  color: #999;
+}
+
+.refreshBtn {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: #444;
+}
+
+.refreshBtn:hover:not(:disabled) { background: #e5e5e5; }
+.refreshBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.loading, .empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: #888;
+}
+
+.error {
+  color: #c0392b;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ── Order cards ──────────────────────────────────────────────────────────── */
+.orderList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Card header */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.1rem;
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.orderId {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #222;
+}
+
+.tableNum {
+  background: #2c3e50;
+  color: #fff;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.orderTime {
+  font-size: 0.82rem;
+  color: #999;
+}
+
+/* Items */
+.itemList {
+  padding: 0.75rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.itemName {
+  flex: 1;
+  color: #333;
+}
+
+.itemQty {
+  color: #888;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.itemSubtotal {
+  font-weight: 600;
+  color: #27ae60;
+  white-space: nowrap;
+  min-width: 60px;
+  text-align: right;
+}
+
+.noItems {
+  color: #bbb;
+  font-size: 0.85rem;
+}
+
+/* Card footer */
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.1rem;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.total {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.total strong {
+  color: #222;
+  font-size: 1rem;
+}
+
+/* Status area */
+.statusArea {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.statusBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.statusPending {
+  background: #fef9e7;
+  color: #b7950b;
+  border: 1px solid #f0c040;
+}
+
+.statusPreparing {
+  background: #eaf4ff;
+  color: #1a6fad;
+  border: 1px solid #7ab8e8;
+}
+
+.statusReady {
+  background: #eafaf1;
+  color: #1e8449;
+  border: 1px solid #58d68d;
+}
+
+.statusCompleted {
+  background: #f4f4f4;
+  color: #888;
+  border: 1px solid #ccc;
+}
+
+.statusSelect {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: #fff;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+}
+
+.statusSelect:focus { border-color: #2c3e50; }
+.statusSelect:disabled { opacity: 0.5; cursor: not-allowed; }

@@ -1,0 +1,171 @@
+/* OrderConfirmationPage.module.css */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  padding: 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Checkmark circle */
+.icon {
+  width: 72px;
+  height: 72px;
+  background: #27ae60;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin: 0 auto 1.25rem;
+  font-weight: 700;
+}
+
+.heading {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.4rem;
+}
+
+.sub {
+  color: #888;
+  font-size: 0.88rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Live status banner ──────────────────────────────────────────────────── */
+.statusBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  border: 1px solid transparent;
+}
+
+.statusLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.75;
+}
+
+.statusValue {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* Status colour variants */
+.badgePending {
+  background: #fef9e7;
+  color: #b7950b;
+  border-color: #f0c040;
+}
+
+.badgePreparing {
+  background: #eaf4ff;
+  color: #1a6fad;
+  border-color: #7ab8e8;
+}
+
+.badgeReady {
+  background: #eafaf1;
+  color: #1e8449;
+  border-color: #58d68d;
+}
+
+.badgeCompleted {
+  background: #f4f4f4;
+  color: #777;
+  border-color: #ccc;
+}
+
+.statusMsg {
+  font-size: 0.88rem;
+  color: #666;
+  margin-bottom: 1.25rem;
+  min-height: 1.3rem;
+}
+
+/* Poll error */
+.pollError {
+  font-size: 0.82rem;
+  color: #e67e22;
+  background: #fef5eb;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+}
+
+/* Order details */
+.details {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 0.93rem;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  color: #777;
+  font-weight: 500;
+}
+
+.value {
+  font-weight: 700;
+  color: #222;
+}
+
+/* Poll note */
+.pollNote {
+  font-size: 0.78rem;
+  color: #bbb;
+  margin-bottom: 1.5rem;
+}
+
+/* Order again button */
+.orderAgainBtn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.orderAgainBtn:hover {
+  background: #1a252f;
+}

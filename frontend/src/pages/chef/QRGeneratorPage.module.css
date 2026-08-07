@@ -1,0 +1,254 @@
+/* QRGeneratorPage.module.css */
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 1.1rem;
+}
+
+.backLink {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.backLink:hover { background: #f0f0f0; }
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Input section */
+.inputSection {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.inputRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 160px;
+}
+
+.label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.input {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  background: #fafafa;
+  max-width: 200px;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #2c3e50;
+  background: #fff;
+}
+
+/* Remove number input spinners for cleaner look */
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.addBtn {
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.3rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.addBtn:hover:not(:disabled) { background: #1a252f; }
+.addBtn:disabled { background: #bdc3c7; cursor: not-allowed; }
+
+.error {
+  margin-top: 0.7rem;
+  color: #c0392b;
+  font-size: 0.88rem;
+  background: #fdecea;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+}
+
+/* Preview section */
+.preview {
+  margin-bottom: 2rem;
+}
+
+.previewTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* QR Card — shared between preview and saved list */
+.qrCard {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 260px;
+}
+
+.qrLabel {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.qrUrl {
+  font-size: 0.72rem;
+  color: #aaa;
+  word-break: break-all;
+  text-align: center;
+}
+
+.downloadBtn {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.downloadBtn:hover { background: #1e8449; }
+
+.cardActions {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.cardActions .downloadBtn {
+  flex: 1;
+}
+
+.removeBtn {
+  background: #fdecea;
+  color: #c0392b;
+  border: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.removeBtn:hover { background: #fad7d5; }
+
+/* Saved section */
+.savedSection {
+  margin-top: 0.5rem;
+}
+
+.savedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.savedTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.printBtn {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #444;
+  transition: background 0.2s;
+}
+
+.printBtn:hover { background: #e0e0e0; }
+
+/* QR grid */
+.qrGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Print styles ─────────────────────────────────────────────────────────── */
+@media print {
+  /* Hide everything except the QR grid */
+  .header,
+  .inputSection,
+  .preview,
+  .savedHeader {
+    display: none !important;
+  }
+
+  .page { padding: 0; }
+
+  .qrGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .qrCard {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  /* Hide download/remove buttons when printing */
+  .cardActions { display: none !important; }
+}

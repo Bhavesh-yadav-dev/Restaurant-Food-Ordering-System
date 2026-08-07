@@ -1,0 +1,86 @@
+/* DashboardPage.module.css */
+
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 1.25rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.welcome {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 0.2rem;
+}
+
+.logoutBtn {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+/* Navigation cards grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.cardIcon {
+  font-size: 2.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.cardDesc {
+  font-size: 0.88rem;
+  color: #777;
+  line-height: 1.5;
+}
