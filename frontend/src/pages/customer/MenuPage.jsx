@@ -71,7 +71,7 @@ const MenuPage = () => {
               <p className={styles.description}>{item.description}</p>
 
               <div className={styles.cardFooter}>
-                <span className={styles.price}>${Number(item.price).toFixed(2)}</span>
+                <span className={styles.price}>₹{Number(item.price).toFixed(2)}</span>
                 <button
                   className={styles.addBtn}
                   onClick={() => addItem(item)}
@@ -89,7 +89,7 @@ const MenuPage = () => {
       {totalItems > 0 && (
         <div className={styles.cartBar}>
           <span>{totalItems} item{totalItems > 1 ? "s" : ""} in cart</span>
-          <span className={styles.cartTotal}>${totalAmount.toFixed(2)}</span>
+          <span className={styles.cartTotal}>₹{totalAmount.toFixed(2)}</span>
           <button
             className={styles.viewCartBtn}
             onClick={() => navigate("/cart")}

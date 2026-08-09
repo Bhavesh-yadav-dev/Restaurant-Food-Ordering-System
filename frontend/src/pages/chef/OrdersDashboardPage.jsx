@@ -154,7 +154,7 @@ const OrdersDashboardPage = () => {
                     <span className={styles.itemName}>{item.name}</span>
                     <span className={styles.itemQty}>× {item.quantity}</span>
                     <span className={styles.itemSubtotal}>
-                      ${Number(item.subtotal).toFixed(2)}
+                      ₹{Number(item.subtotal).toFixed(2)}
                     </span>
                   </div>
                 ))
@@ -166,7 +166,7 @@ const OrdersDashboardPage = () => {
             {/* Card footer */}
             <div className={styles.cardFooter}>
               <span className={styles.total}>
-                Total: <strong>${Number(order.total_amount).toFixed(2)}</strong>
+                Total: <strong>₹{Number(order.total_amount).toFixed(2)}</strong>
               </span>
 
               <div className={styles.statusArea}>

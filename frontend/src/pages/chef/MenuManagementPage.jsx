@@ -189,7 +189,7 @@ const MenuManagementPage = () => {
                 />
               </div>
               <div className={styles.field}>
-                <label className={styles.label}>Price ($) *</label>
+                <label className={styles.label}>Price (₹) *</label>
                 <input
                   name="price"
                   type="number"
@@ -293,7 +293,7 @@ const MenuManagementPage = () => {
                       <td className={styles.nameCell}>{item.name}</td>
                       <td className={styles.descCell}>{item.description}</td>
                       <td className={styles.priceCell}>
-                        ${Number(item.price).toFixed(2)}
+                        ₹{Number(item.price).toFixed(2)}
                       </td>
                       <td>
                         <button

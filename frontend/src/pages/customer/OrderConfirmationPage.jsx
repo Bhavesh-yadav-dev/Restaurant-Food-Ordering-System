@@ -128,7 +128,7 @@ const OrderConfirmationPage = () => {
           <div className={styles.row}>
             <span className={styles.label}>Total Amount</span>
             <span className={styles.value}>
-              ${Number(order.total_amount).toFixed(2)}
+              ₹{Number(order.total_amount).toFixed(2)}
             </span>
           </div>
         </div>
