@@ -23,14 +23,34 @@ const PORT = process.env.PORT || 5000;
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
 
-// Allow requests from the React frontend (http://localhost:5173)
+// Allow requests from the React frontend.
+// Using a function-based origin check so we can whitelist multiple URLs
+// (Vercel production, Vercel preview deployments, and local dev).
+const ALLOWED_ORIGINS = [
+  "https://restaurant-food-ordering-system-ten.vercel.app",
+  "http://localhost:5173",
+];
+
 app.use(
   cors({
-    origin: "https://restaurant-food-ordering-system-ten.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    credentials: true,
+    origin: (incomingOrigin, callback) => {
+      // Allow server-to-server requests (no origin header) and whitelisted origins
+      if (!incomingOrigin || ALLOWED_ORIGINS.includes(incomingOrigin)) {
+        callback(null, true);
+      } else {
+        callback(new Error(`CORS: origin ${incomingOrigin} is not allowed`));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: false, // We don't use cookies — keeping this false avoids the wildcard conflict
   })
 );
+
+// Explicitly handle preflight OPTIONS requests for all routes.
+// Some clients (mobile browsers, Axios) send a preflight before every
+// non-simple request. Without this, those requests get a 404.
+app.options("*", cors());
 
 // Parse incoming JSON request bodies
 app.use(express.json());
@@ -70,6 +90,23 @@ const startServer = async () => {
   app.listen(PORT, () => {
     console.log(`🚀 Server running on https://restaurant-food-ordering-system-yc2m.onrender.com`);
   });
+
+  // ── Keep-alive ping ────────────────────────────────────────────────────────
+  // Render's free tier spins down after 15 minutes of inactivity.
+  // When the server is asleep it can't respond to the CORS preflight,
+  // so the browser reports a CORS error even though the config is correct.
+  // Pinging ourselves every 14 minutes keeps the instance awake.
+  const KEEP_ALIVE_URL = "https://restaurant-food-ordering-system-yc2m.onrender.com/api/health";
+  const PING_INTERVAL  = 14 * 60 * 1000; // 14 minutes in ms
+
+  setInterval(async () => {
+    try {
+      const res = await fetch(KEEP_ALIVE_URL);
+      console.log(`🏓 Keep-alive ping: ${res.status}`);
+    } catch (err) {
+      console.warn("⚠ Keep-alive ping failed:", err.message);
+    }
+  }, PING_INTERVAL);
 };
 
 startServer();
