@@ -1,6 +1,6 @@
 // pages/chef/QRGeneratorPage.jsx
 // Chef enters a table number and the page instantly generates a QR code
-// that points to the customer menu URL: http://localhost:5173/menu/<tableNumber>
+// that points to the deployed customer menu URL.
 //
 // Features:
 //  - Live QR generation as the chef types (no submit needed)
@@ -14,8 +14,7 @@ import { QRCodeCanvas } from "qrcode.react";
 import styles from "./QRGeneratorPage.module.css";
 
 // The base URL customers will hit when they scan the QR code.
-// In production replace localhost with your actual domain.
-const BASE_URL = "http://localhost:5173/menu";
+const BASE_URL = "https://restaurant-food-ordering-system-ten.vercel.app/menu";
 
 const QRGeneratorPage = () => {
   const navigate = useNavigate();
