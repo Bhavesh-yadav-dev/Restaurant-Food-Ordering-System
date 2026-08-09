@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 5000;
 // Allow requests from the React frontend (http://localhost:5173)
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://restaurant-food-ordering-system-ten.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
   })
@@ -68,7 +68,7 @@ const startServer = async () => {
   await testConnection();
 
   app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running on https://restaurant-food-ordering-system-yc2m.onrender.com`);
   });
 };
 
