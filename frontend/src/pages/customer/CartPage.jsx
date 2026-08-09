@@ -100,7 +100,7 @@ const CartPage = () => {
           <div key={item.id} className={styles.item}>
             <div className={styles.itemInfo}>
               <h3 className={styles.itemName}>{item.name}</h3>
-              <p className={styles.itemPrice}>${Number(item.price).toFixed(2)} each</p>
+              <p className={styles.itemPrice}>₹{Number(item.price).toFixed(2)} each</p>
             </div>
 
             {/* Quantity controls */}
@@ -123,7 +123,7 @@ const CartPage = () => {
             </div>
 
             <span className={styles.subtotal}>
-              ${(item.price * item.quantity).toFixed(2)}
+              ₹{(item.price * item.quantity).toFixed(2)}
             </span>
 
             <button
@@ -141,11 +141,11 @@ const CartPage = () => {
       <div className={styles.summary}>
         <div className={styles.summaryRow}>
           <span>Items ({totalItems})</span>
-          <span>${totalAmount.toFixed(2)}</span>
+          <span>₹{totalAmount.toFixed(2)}</span>
         </div>
         <div className={styles.summaryRow + " " + styles.total}>
           <span>Total</span>
-          <span>${totalAmount.toFixed(2)}</span>
+          <span>₹{totalAmount.toFixed(2)}</span>
         </div>
       </div>
 
